@@ -12,7 +12,6 @@ function buscar(){
  	.done(function(data) {
  		console.log("success");
  		console.log(data);
- 		ponerCeldas(data);
  	})
  	.fail(function() {
  		console.log("error");
@@ -21,8 +20,4 @@ function buscar(){
  		console.log("complete");
  	});
 	return false;
-}
-
-function ponerCeldas(data){
-    console.log(data)
 }
