@@ -12,7 +12,7 @@ function historico(){
 
 	if (text.length > 0){
 
-		$.get('http://history.openweathermap.org/data/2.5/history/city?q='+ text +'&&appid='+ appId +'',
+		$.get('https://history.openweathermap.org/data/2.5/history/city?q='+ text +'&&appid='+ appId +'',
 			function(data){
 				console.log(data)
 

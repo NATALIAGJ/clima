@@ -21,7 +21,7 @@ script.
 
 	function historicoClimaCiudad(){
 		alert("presiono");
-		$.get('http://api.openweathermap.org/data/2.5/history/accumulated_temperature?id=2885679&threshold=284&start=1505336400&end=1505941200&appid='+ appId +'',
+		$.get('http://history.openweathermap.org/data/2.5/history/city?q=London,UK&appid='+ appId +'',
 			function(data){
 				console.log(data);
 				/*console.log("Id Ciudad: "+data.id);
