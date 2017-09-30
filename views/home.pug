@@ -1,10 +1,35 @@
-div
-	h clima
-form(action="/infoClima" method="POST")
-	select(name="tipo" id="tipo" onsubmit="navegarA();")
-		option() Seleccione una opción
-		option(value=0) Clima en tiempo real
-		option(value=1) Histórico del clima de una ciudad
-		option(value=2) Pronóstico de los proximos 5 dias
-
-	button(type="submit") Continuar
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		title Clima
+		meta(name='description', content='Prueba de ingreso')
+		meta(name='author', content='Natalia Gonzalez')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+	body
+		.container
+			.jumbotron
+				h1 Clima
+				p Por favor seleccione entre las tres opciones siguientes
+			.row
+				.col-sm-12
+					.card
+						.card-body
+							// PRIMERA OPCION
+							.card.col-sm-4
+								.card-block
+									h4.card-title Clima en tiempo real
+									p.card-text
+										| Selecciona si quieres ver el clima de una ciudad en tiempo real, se cargan los datos en determinado tiempo.
+									a.btn.btn-primary(href='/tiempoReal') Explorar clima en tiempo real
+							// SEGUNDA OPCION
+							.card.col-sm-4
+								.card-block
+									h4.card-title Histórico
+									p.card-text Selecciona si quieres ver el hostorico del clima de una ciudad.
+									a.btn.btn-primary(href='/historico') Explorar Histórico
+							// TERCERA OPCION
+							.card.col-sm-4
+								.card-block
+									h4.card-title Pronóstico
+									p.card-text Selecciona si quieres ver el pronostico del clima de una ciudad en cinco días.
+									a.btn.btn-primary(href='/pronostico') Explorar Pronostico

@@ -1,0 +1,37 @@
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		title Pronostico Clima
+		meta(name='description', content='Prueba de ingreso')
+		meta(name='author', content='Natalia Gonzalez')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+		script(type='text/javascript', src='../static/js/pronostico.js')
+	body
+		.container
+			.jumbotron
+				h1 Pronóstico del clima
+				p Empieza Buscando la ciudad por su nombre
+			// row para el buscador
+			.row
+				.col-md-12
+					.col-md-4
+					#custom-search-input
+						.input-group.col-md-4
+							input#entrada.form-control.input-lg(type='text', placeholder='Buscar')
+							span.input-group-btn
+								button#boton.btn.btn-info.btn-lg(type='button')
+									i.glyphicon.glyphicon-search
+					.col-md-4
+			// row para el contenido
+			.row
+				.col-md-12
+					table.table
+						thead
+							tr
+								th Nombre Ciudad
+								th Código Pais
+								th Fecha Temperatura
+								th Temperatura
+								th Descripción del Clima
+						tbody#contenidoTabla

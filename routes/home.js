@@ -8,11 +8,16 @@ module.exports = function(app){
 		res.render("infoClima");
 	});
 
-	app.post("/infoClima",function(req,res){
-		var tipo = req.body.tipo;
-		res.render("infoClima",{
-			tipo:tipo
-		});
+	app.get("/tiempoReal",function(req,res){
+		res.render("tiempoReal");
+	});
+
+	app.get("/pronostico",function(req,res){
+		res.render("pronostico");
+	});
+
+	app.get("/historico",function(req,res){
+		res.render("historico");
 	});
 
 }
