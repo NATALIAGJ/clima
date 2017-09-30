@@ -1,13 +1,85 @@
-if tipo == 0
-	p Clima en tiempo real
-else if tipo == 1
-	p Histórico del clima de una ciudad
-else if tipo == 2
-	p Pronóstico de los proximos 5 dias
-
-form(onsubmit="return buscar();")
-	input(type='search', id='ciudad' name='ciudad' placeholder="Ciudad")
-	button(type='submit') Buscar
+button(type='button' id="buscar" onclick="historicoClimaCiudad()") boton
 
 
-script(type='text/javascript', src="../static/js/buscarCiudad.js")
+//script(type='text/javascript', src="../static/js/buscarCiudad.js")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+script.
+	var appId = "ff32f9c51a9964f8161e0fe4f4289cbf";
+
+	function climaEnTiempoReal(){
+		$.get('http://api.openweathermap.org/data/2.5/weather?q=London&appId='+ appId +'',
+			function(data){
+				console.log(data);
+				console.log("Id Ciudad: "+data.id);
+				console.log("Nombre Ciudad: "+data.name);
+				console.log("Pais: "+data.sys.country);
+				console.log("Descripcion del Clima: "+data.weather.description);
+				console.log("Temperatura: "+data.main.temp);
+			}
+		);
+	}
+
+	function historicoClimaCiudad(){
+		alert("presiono");
+		$.get('http://api.openweathermap.org/data/2.5/history/accumulated_temperature?id=2885679&threshold=284&start=1505336400&end=1505941200&appid='+ appId +'',
+			function(data){
+				console.log(data);
+				/*console.log("Id Ciudad: "+data.id);
+				console.log("Nombre Ciudad: "+data.name);
+				console.log("Pais: "+data.sys.country);
+				console.log("Descripcion del Clima: "+data.weather.description);
+				console.log("Temperatura: "+data.main.temp);*/
+			}
+		);
+	}
+
+	function pronostico(){
+		$.get('http://api.openweathermap.org/data/2.5/forecast?zip=94040,us&&appid='+ appId +'',
+			function(data){
+				console.log(data)
+				console.log("Nombre Ciudad: "+data.city.name);
+				console.log("Pais: "+data.city.country);
+				for(var i = 0; i < data.list.length; i++){
+					//console.log(data.list[i])
+					console.log("va: "+i);
+					console.log("Fecha Temperatura: "+data.list[i].dt_txt);
+					console.log("Temperatura: "+data.list[i].main.temp);
+					console.log("Descripcion del Clima: "+data.list[i].weather.description);
+				}
+			}
+		);
+	}
+
+
+	/*$('#buscar').click(function(){
+		$.get('http://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b1b15e88fa797225412429c1c50c122a1', function(data){
+			data = JSON.parse(data);
+			console.log(data);
+			//$('#nombre').val(data.nombre);
+			//$('#apellidos').val(data.apellidos);
+		});
+		return false;
+	});*/
+	/*$.ajax({
+		url: "http://api.openweathermap.org/data/2.5/weather?q=Bogota&appId=ff32f9c51a9964f8161e0fe4f4289cbf",
+		data: {
+			zipcode: 97201
+		},
+		success: function( result ) {
+		$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+		}
+	});
+
+	$(document).ready(function(){
+		$("#button").click(function(){
+		alert("presiono")
+		/*$.ajax({
+			type:"GET",
+			url:"http://api.openweathermap.org/data/2.5/weather?q=London&appId=ff32f9c51a9964f8161e0fe4f4289cbf", 
+			headers: { "Accept": "application/json; odata=verbose" },
+			crossDomain:true, 
+			success:function(result){
+				console.log(result)
+			}});
+		});
+	});*/

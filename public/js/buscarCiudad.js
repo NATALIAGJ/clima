@@ -1,6 +1,6 @@
 function buscar(){
 
-	console.log("Hola buscar");
+	/*console.log("Hola buscar");
 
  	var buscar = $("#ciudad").val();
     console.log(buscar);
@@ -19,5 +19,8 @@ function buscar(){
  	.always(function() {
  		console.log("complete");
  	});
-	return false;
+	return false;*/
+
+	
 }
+
