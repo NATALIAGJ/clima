@@ -1,0 +1,13 @@
+if tipo == 0
+	p Clima en tiempo real
+else if tipo == 1
+	p Histórico del clima de una ciudad
+else if tipo == 2
+	p Pronóstico de los proximos 5 dias
+
+form(onsubmit="return buscar();")
+	input(type='search', id='ciudad' name='ciudad' placeholder="Ciudad")
+	button(type='submit') Buscar
+
+
+script(type='text/javascript', src="../static/js/buscarCiudad.js")

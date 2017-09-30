@@ -1,0 +1,10 @@
+div
+	h clima
+form(action="/infoClima" method="POST")
+	select(name="tipo" id="tipo" onsubmit="navegarA();")
+		option() Seleccione una opción
+		option(value=0) Clima en tiempo real
+		option(value=1) Histórico del clima de una ciudad
+		option(value=2) Pronóstico de los proximos 5 dias
+
+	button(type="submit") Continuar
