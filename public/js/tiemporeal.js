@@ -27,8 +27,8 @@ function climaEnTiempoReal(){
 				console.log("Temperatura: "+data.main.temp);
 				$("#contenidoTiempoReal").empty();
 				cadena = "";
-				cadena += '<h4 class="card-title">' + "Id Ciudad: "+data.id + '</h4>';
-				cadena += '<p>' + "Nombre Ciudad: "+data.name + '</p>'
+				cadena += '<h4 class="card-title">' + "Nombre Ciudad: "+data.name + '</h4>';
+				cadena += '<p>' + "Id Ciudad: "+data.id + '</p>'
 				cadena += '<p>' + "Pais: "+data.sys.country + '</p>';
 				cadena += '<p>' + "Descripcion del Clima: "+data.weather[0].description + '</p>';
 				cadena += '<p>' + "Temperatura: "+data.main.temp + '</p>';
